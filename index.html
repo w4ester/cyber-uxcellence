@@ -7,14 +7,14 @@
     <meta name="description" content="The Cyber UXcellence Awards celebrates teams creating intuitive, user-friendly security solutions that protect organizations without compromising on usability.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="Property 1=Purple Horizontal.png">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="styles2.css" as="style">
     <link rel="preload" href="script.js" as="script">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,10 +24,17 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom font for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Cyber UXcellence Awards | Recognizing Excellence in Cybersecurity UX">
     <meta property="og:description" content="Celebrating teams creating intuitive, user-friendly security solutions that protect organizations without compromising on usability.">
-    <meta property="og:image" content="og-image.jpg">
+    <meta property="og:image" content="Property 1=Purple Horizontal.png">
     <meta property="og:url" content="https://cyberuxcellence.com">
     <meta property="og:type" content="website">
     
@@ -35,19 +42,20 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cyber UXcellence Awards">
     <meta name="twitter:description" content="Recognizing Excellence in Cybersecurity User Experience">
-    <meta name="twitter:image" content="twitter-card.jpg">
+    <meta name="twitter:image" content="Property 1=Purple Horizontal.png">
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    })(window,document,'script','dataLayer','GTM-TGCLZ56');</script>
     <!-- End Google Tag Manager -->
+    <!-- Force GitHub Pages rebuild -->
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGCLZ56"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -76,7 +84,7 @@
                     <li><a href="#judges" class="nav-link">Judges</a></li>
                     <li><a href="#timeline" class="nav-link">Timeline</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li class="nav-cta"><a href="#nominate" class="btn btn-primary">Nominate Now</a></li>
+                    <li class="nav-cta"><button id="open-nomination-modal-nav" class="btn btn-primary"><i class="fas fa-trophy"></i> Nominate Now</button></li>
                 </ul>
             </nav>
         </div>
@@ -90,7 +98,7 @@
                     <h1 class="hero-title fade-in">Recognizing Excellence in Cybersecurity User Experience</h1>
                     <p class="hero-subtitle fade-in-delay">The Cyber UXcellence Awards celebrates teams creating intuitive, user-friendly security solutions that protect organizations without compromising on usability</p>
                     <div class="cta-buttons fade-in-delay-2">
-                        <a href="#nominate" class="btn btn-primary btn-glow">Nominate Now</a>
+                        <button id="open-nomination-modal-hero" class="btn btn-primary btn-glow"><i class="fas fa-trophy"></i> Nominate Now</button>
                         <a href="#about" class="btn btn-secondary">Learn More</a>
                     </div>
                 </div>
@@ -147,94 +155,241 @@
 
         <section id="categories" class="categories section-padding section-alternate">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">Award Categories</h2>
-                    <p class="section-intro">Recognizing excellence across the spectrum of cybersecurity user experience</p>
-                </div>
-                
+              <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Award Categories</h2>
+                <p class="section-intro">Recognizing excellence across the spectrum of cybersecurity user experience</p>
+              </div>
+          
+              <!-- Category Selection Tabs -->
+              <div class="category-tabs" data-aos="fade-up">
+                <div class="category-tab active" data-index="0">Best Overall</div>
+                <div class="category-tab" data-index="1">Intuitive UI</div>
+                <div class="category-tab" data-index="2">Mobile Security</div>
+                <div class="category-tab" data-index="3">Accessibility</div>
+                <div class="category-tab" data-index="4">Data Visualization</div>
+                <div class="category-tab" data-index="5">Onboarding</div>
+                <div class="category-tab" data-index="6">Incident Response</div>
+                <div class="category-tab" data-index="7">Access Management</div>
+              </div>
+          
+              <!-- 3D Carousel Container -->
+              <div class="categories-scroll-container" data-aos="fade-up">
                 <div class="category-cards">
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3 class="category-title">Best Overall UX in Cybersecurity</h3>
-                        </div>
-                        <p class="category-description">The highest honor, awarded to the product that delivers the most comprehensive, user-centric experience across all aspects of cybersecurity, setting the industry standard for excellence in UX.</p>
+                  <!-- Card 0: Premium Hero Card - Best Overall -->
+                  <div class="category-card category-card-best-overall active" data-index="0">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-trophy"></i>
+                      </div>
+                      <h3 class="category-title">Best Overall UX in Cybersecurity</h3>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-mouse-pointer"></i>
-                            </div>
-                            <h3 class="category-title">Most Intuitive User Interface</h3>
-                        </div>
-                        <p class="category-description">Recognizes a cybersecurity product that offers a seamless and easy-to-navigate interface, minimizing cognitive load and ensuring users can complete tasks with minimal friction or confusion.</p>
+                    <p class="category-description">
+                      The highest honor, awarded to the product that delivers the most comprehensive, user-centric experience across all aspects of cybersecurity, setting the industry standard for excellence in UX.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">94%</div>
+                        <div class="stat-label">User Adoption</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">82%</div>
+                        <div class="stat-label">Efficiency</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">96%</div>
+                        <div class="stat-label">Security Efficacy</div>
+                      </div>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3 class="category-title">Best Mobile Security UX</h3>
-                        </div>
-                        <p class="category-description">Honors a cybersecurity product that delivers a top-tier, frictionless experience on mobile devices, ensuring security tools are both effective and effortless for users on the go.</p>
+                    <div class="judge-quote">
+                      "The pinnacle of cybersecurity design. This award recognizes solutions that make robust security both accessible and intuitive for all users."
+                      <div class="judge-attribution">- CISO Panel</div>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="250">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-universal-access"></i>
-                            </div>
-                            <h3 class="category-title">Best Accessibility & Inclusive Design</h3>
-                        </div>
-                        <p class="category-description">Recognizes a cybersecurity product that prioritizes accessibility, ensuring an inclusive experience for all users, including those with disabilities, varying levels of technical expertise, or unique environmental challenges.</p>
+                  </div>
+          
+                  <!-- Card 1: Most Intuitive User Interface -->
+                  <div class="category-card" data-index="1">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                      </div>
+                      <h3 class="category-title">Most Intuitive User Interface</h3>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3 class="category-title">Best Visual Data Representation</h3>
-                        </div>
-                        <p class="category-description">Awards the product that transforms complex security data into clear, digestible, and actionable insights through effective data visualization, reducing information overload and improving decision-making.</p>
+                    <p class="category-description">
+                      Recognizes a cybersecurity product that offers a seamless and easy-to-navigate interface, minimizing cognitive load and ensuring users can complete tasks with minimal friction.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">78%</div>
+                        <div class="stat-label">Task Completion</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">3.2x</div>
+                        <div class="stat-label">Efficiency Gain</div>
+                      </div>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="350">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-user-plus"></i>
-                            </div>
-                            <h3 class="category-title">Best UX for Onboarding & User Guidance</h3>
-                        </div>
-                        <p class="category-description">Recognizes a cybersecurity product that delivers an exceptional onboarding experience, helping users quickly understand key features, configure settings with ease, and achieve security readiness with minimal frustration.</p>
+                  </div>
+          
+                  <!-- Card 2: Best Mobile Security UX -->
+                  <div class="category-card" data-index="2">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                      </div>
+                      <h3 class="category-title">Best Mobile Security UX</h3>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 class="category-title">Best UX for Incident Response & Crisis Management</h3>
-                        </div>
-                        <p class="category-description">Recognizes a cybersecurity product that delivers an intuitive, well-structured experience for managing security incidents, helping teams respond quickly, collaborate effectively, and make informed decisions under pressure.</p>
+                    <p class="category-description">
+                      Honors a cybersecurity product that delivers a top-tier, frictionless experience on mobile devices, ensuring security tools are both effective and effortless for users on the go.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Mobile Adoption</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">67%</div>
+                        <div class="stat-label">Feature Parity</div>
+                      </div>
                     </div>
-                    
-                    <div class="category-card" data-aos="fade-up" data-aos-delay="450">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-key"></i>
-                            </div>
-                            <h3 class="category-title">Best UX for Identity & Access Management</h3>
-                        </div>
-                        <p class="category-description">Honoring solutions that minimize friction while maintaining strong security, this category highlights innovations in identity verification, single sign-on, passwordless authentication, and adaptive access controls.</p>
+                  </div>
+          
+                  <!-- Card 3: Best Accessibility & Inclusive Design -->
+                  <div class="category-card" data-index="3">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-universal-access"></i>
+                      </div>
+                      <h3 class="category-title">Best Accessibility & Inclusive Design</h3>
                     </div>
+                    <p class="category-description">
+                      Recognizes a cybersecurity product that prioritizes accessibility, ensuring an inclusive experience for all users, including those with disabilities, varying levels of technical expertise, or unique environmental challenges.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">WCAG Compliance</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">User Inclusivity</div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Card 4: Best Visual Data Representation -->
+                  <div class="category-card" data-index="4">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                      </div>
+                      <h3 class="category-title">Best Visual Data Representation</h3>
+                    </div>
+                    <p class="category-description">
+                      Awards the product that transforms complex security data into clear, digestible, and actionable insights through effective data visualization, reducing information overload and improving decision-making.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">76%</div>
+                        <div class="stat-label">Data Clarity</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">4.8x</div>
+                        <div class="stat-label">Decision Speed</div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Card 5: Best UX for Onboarding & User Guidance -->
+                  <div class="category-card" data-index="5">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-user-plus"></i>
+                      </div>
+                      <h3 class="category-title">Best UX for Onboarding & User Guidance</h3>
+                    </div>
+                    <p class="category-description">
+                      Recognizes a cybersecurity product that delivers an exceptional onboarding experience, helping users quickly understand key features, configure settings with ease, and achieve security readiness with minimal frustration.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">92%</div>
+                        <div class="stat-label">Completion Rate</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">-45%</div>
+                        <div class="stat-label">Time to Value</div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Card 6: Best UX for Incident Response & Crisis Management -->
+                  <div class="category-card" data-index="6">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                      </div>
+                      <h3 class="category-title">Best UX for Incident Response & Crisis Management</h3>
+                    </div>
+                    <p class="category-description">
+                      Recognizes a cybersecurity product that delivers an intuitive, well-structured experience for managing security incidents, helping teams respond quickly, collaborate effectively, and make informed decisions under pressure.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">64%</div>
+                        <div class="stat-label">Response Time</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Team Coordination</div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <!-- Card 7: Best UX for Identity & Access Management -->
+                  <div class="category-card" data-index="7">
+                    <div class="category-header">
+                      <div class="category-icon">
+                        <i class="fas fa-key"></i>
+                      </div>
+                      <h3 class="category-title">Best UX for Identity & Access Management</h3>
+                    </div>
+                    <p class="category-description">
+                      Honoring solutions that minimize friction while maintaining strong security, this category highlights innovations in identity verification, single sign-on, passwordless authentication, and adaptive access controls.
+                    </p>
+                    <div class="category-stats">
+                      <div class="stat-item">
+                        <div class="stat-value">-72%</div>
+                        <div class="stat-label">Login Friction</div>
+                      </div>
+                      <div class="stat-item">
+                        <div class="stat-value">+41%</div>
+                        <div class="stat-label">Security Posture</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+          
+              <!-- 3D Carousel Navigation Controls -->
+              <div class="category-navigation" data-aos="fade-up">
+                <button class="category-nav-button" id="prev-category" aria-label="Previous category">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-indicators">
+                  <div class="carousel-indicator active" data-index="0"></div>
+                  <div class="carousel-indicator" data-index="1"></div>
+                  <div class="carousel-indicator" data-index="2"></div>
+                  <div class="carousel-indicator" data-index="3"></div>
+                  <div class="carousel-indicator" data-index="4"></div>
+                  <div class="carousel-indicator" data-index="5"></div>
+                  <div class="carousel-indicator" data-index="6"></div>
+                  <div class="carousel-indicator" data-index="7"></div>
+                </div>
+                <button class="category-nav-button" id="next-category" aria-label="Next category">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
             </div>
-        </section>
+          </section>
 
         <section id="why" class="why-nominate section-padding">
             <div class="container">
@@ -468,13 +623,10 @@
                     <h2>Ready to highlight your product's exceptional UX?</h2>
                     <p>Nominations for the inaugural Cyber UXcellence Awards open on April 14, 2025</p>
                     
-                    <!-- HubSpot Form Integration -->
-                    <div class="hubspot-form-container">
-                        <h3>Register for Updates</h3>
-                        <div id="hubspot-form">
-                            <!-- HubSpot form will be loaded here by JavaScript -->
-                        </div>
-                    </div>
+                    <!-- Replace the hubspot-form-container with a button -->
+                    <button id="open-nomination-modal" class="btn btn-primary btn-large btn-glow">
+                        <i class="fas fa-trophy"></i> Nominate Now
+                    </button>
                 </div>
             </div>
         </section>
@@ -551,9 +703,151 @@
         </div>
     </div>
 
+    <!-- Nomination Modal -->
+    <div id="nomination-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Nominate Your Product</h3>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <!-- Nomination Form with enhanced validation -->
+                <form id="nomination-form" class="nomination-form">
+                    <p class="form-description">Submit your product for consideration in the Cyber UXcellence Awards.</p>
+                    
+                    <!-- Contact Information Section -->
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <!-- Product Information Section -->
+                    <div class="form-section">
+                        <h4>Product Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" name="productName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productWebsite">Product Website *</label>
+                            <input type="url" id="productWebsite" name="productWebsite" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Award Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="best-overall">Best Overall UX in Cybersecurity</option>
+                                <option value="intuitive-interface">Most Intuitive User Interface</option>
+                                <option value="mobile-security">Best Mobile Security UX</option>
+                                <option value="accessibility">Best Accessibility & Inclusive Design</option>
+                                <option value="data-visualization">Best Visual Data Representation</option>
+                                <option value="onboarding">Best UX for Onboarding & User Guidance</option>
+                                <option value="incident-response">Best UX for Incident Response & Crisis Management</option>
+                                <option value="identity-access">Best UX for Identity & Access Management</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nominationReason">Why does this product deserve recognition? *</label>
+                            <textarea id="nominationReason" name="nominationReason" rows="5" required></textarea>
+                            <span class="character-count">0/500 characters</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Supporting Materials -->
+                    <div class="form-section">
+                        <h4>Supporting Materials</h4>
+                        
+                        <div class="form-group">
+                            <label for="productScreenshots">Product Screenshots (optional)</label>
+                            <div class="file-upload-container">
+                                <input type="file" id="productScreenshots" name="productScreenshots" multiple accept="image/*">
+                                <div class="file-upload-button">
+                                    <i class="fas fa-cloud-upload-alt"></i> Choose Files
+                                </div>
+                                <div class="file-upload-text">No files selected</div>
+                            </div>
+                            <span class="form-hint">You may upload up to 5 images (PNG, JPG) - Max 5MB each</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additionalInfo">Additional Materials URL (optional)</label>
+                            <input type="url" id="additionalInfo" name="additionalInfo">
+                            <span class="form-hint">Link to a document, presentation, or video showcasing your product</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Consent Section -->
+                    <div class="form-section">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="termsConsent" name="termsConsent" required>
+                            <label for="termsConsent">I agree to the <a href="#">terms and conditions</a> *</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="marketingConsent" name="marketingConsent">
+                            <label for="marketingConsent">I would like to receive updates about the Cyber UXcellence Awards</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary btn-large">Submit Nomination</button>
+                        <span class="required-fields">* Required fields</span>
+                    </div>
+                    
+                    <!-- Success message (hidden by default) -->
+                    <div class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="success-message">
+                            <h4>Thank you for your nomination!</h4>
+                            <p>We've received your submission and will be in touch shortly.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- LinkedIn Insight Tag -->
     <script type="text/javascript">
-        _linkedin_partner_id = "XXXXXXX";
+        _linkedin_partner_id = "526278";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
         window._linkedin_data_partner_ids.push(_linkedin_partner_id);
     </script>
@@ -569,7 +863,7 @@
         })(window.lintrk);
     </script>
     <noscript>
-        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=XXXXXXX&fmt=gif" />
+        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=526278&fmt=gif" />
     </noscript>
     <!-- End LinkedIn Insight Tag -->
 
