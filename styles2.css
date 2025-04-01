@@ -983,22 +983,28 @@ a:focus {
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
 }
 
-/* Expanded hero category */
+/* Premium Modern Card Styling - Better Design */
 .category-card-best-overall {
-    background: var(--category-gradient-1);
-    color: white;
-    min-height: 380px; /* Shorter height to match standard cards */
-    width: 520px; /* Extra wide for hero card */
+    background: white;
+    color: var(--primary-dark);
+    min-height: 450px;
+    width: 80%;
+    max-width: 1100px;
     flex-shrink: 0;
-    position: sticky;
-    left: 1rem;
+    position: relative;
     z-index: 5;
     box-shadow: 
-        0 25px 50px rgba(106, 27, 154, 0.25),
-        0 15px 30px rgba(0, 0, 0, 0.1),
-        0 5px 15px rgba(0, 0, 0, 0.05),
+        0 25px 50px rgba(106, 27, 154, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
         inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg) var(--spacing-xl);
     border: none;
@@ -1033,18 +1039,20 @@ a:focus {
 
 /* Standard category cards */
 .category-card {
-    background: var(--category-gradient-light);
-    padding: var(--spacing-lg) var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--category-card-shadow);
-    transition: var(--category-transition);
-    border: var(--category-card-border);
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 
+        0 25px 40px rgba(106, 27, 154, 0.1), 
+        0 10px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease-out;
+    border: 1px solid rgba(106, 27, 154, 0.08);
     position: absolute;
     overflow: hidden;
     z-index: 1;
     transform-style: preserve-3d;
-    min-height: 350px; /* Updated from 370px */
-    width: 380px;      /* Updated from 440px */
+    min-height: 400px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1210,18 +1218,18 @@ a:focus {
 
 .category-title {
     font-family: 'Playfair Display', 'Montserrat', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-dark);
     transition: var(--category-transition);
     position: relative;
     display: block;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
     font-weight: 700;
-    padding-bottom: 0.75rem;
+    padding-bottom: 1rem;
     width: 100%;
-    max-width: 75%;
+    max-width: 100%;
     text-align: left;
 }
 
@@ -1263,21 +1271,17 @@ a:focus {
 
 .category-description {
     color: var(--text-medium);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     transition: var(--category-transition);
     position: relative;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
     letter-spacing: 0.2px;
-    padding: 0.75rem 1rem;
-    margin: 0.25rem 0 1rem 0;
-    border-radius: var(--border-radius-md);
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.03),
-        inset 0 0 0 1px rgba(106, 27, 154, 0.05);
-    max-height: 110px;
-    overflow-y: auto;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    max-width: 85%;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .category-description::before {
@@ -5591,3 +5595,79 @@ textarea.error + .form-error {
         text-align: center;
     }
   }
+  
+/* Case Study styles for premium category card */
+.category-case-study {
+    margin-top: auto;
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.08);
+    border: 1px solid rgba(106, 27, 154, 0.05);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.case-study-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #4b29a0;
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-study-company {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 3rem 0 1rem 0;
+    letter-spacing: -0.5px;
+}
+
+.case-study-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.case-study-image img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.5s ease-out;
+}
+
+.case-study-image img:hover {
+    transform: scale(1.03);
+}
+
+.category-attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.category-author {
+    font-weight: 600;
+    color: var(--primary-dark);
+    font-size: 1rem;
+}
+
+.category-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
