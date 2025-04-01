@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberUXcellence - Cyber Security Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Cyber<span>UX</span>cellence</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#nominations">Nominations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 class="animated">Securing Your Digital Future</h1>
+        <p class="animated">Expert cybersecurity solutions with exceptional user experience at the core</p>
+        <a href="#contact" class="btn animated">Learn More</a>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Security Assessments</h3>
+                    <p>Comprehensive evaluation of your systems to identify vulnerabilities and provide actionable recommendations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Secure UX Design</h3>
+                    <p>Creating user experiences that prioritize both security and usability for optimal engagement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Penetration Testing</h3>
+                    <p>Simulated cyber attacks to identify and fix security weaknesses before malicious actors can exploit them.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Security Compliance</h3>
+                    <p>Ensuring your organization meets industry regulations and security standards with minimal disruption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About CyberUXcellence</h2>
+                <p>Founded by a team of cybersecurity experts and UX designers, CyberUXcellence bridges the gap between robust security and exceptional user experience.</p>
+                <p>We believe that security doesn't have to come at the expense of usability. Our mission is to create secure digital environments that people actually enjoy using.</p>
+                <p>With our unique approach, we've helped organizations across various industries protect their digital assets while enhancing user satisfaction.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://source.unsplash.com/random/600x400/?team" alt="Our Team">
+            </div>
+        </div>
+    </section>
+    
+    <section id="nominations" class="nominations">
+        <div class="container">
+            <h2 class="section-title">Excellence in Cybersecurity Award</h2>
+            <p class="nominations-intro">Nominate yourself or someone else for our Excellence in Cybersecurity Award. All nominees will receive valuable resources and be added to our community of cybersecurity professionals.</p>
+            
+            <div class="nominations-container">
+                <div class="nominations-info">
+                    <h3>Why Nominate?</h3>
+                    <ul class="benefits-list">
+                        <li><span class="benefit-icon">🏆</span> Recognition among industry peers</li>
+                        <li><span class="benefit-icon">🔄</span> Networking opportunities with security professionals</li>
+                        <li><span class="benefit-icon">📚</span> Access to exclusive cybersecurity resources</li>
+                        <li><span class="benefit-icon">🎓</span> Invitation to workshops and training events</li>
+                    </ul>
+                    <div class="nomination-criteria">
+                        <h3>Nomination Criteria</h3>
+                        <p>Nominees should demonstrate excellence in one or more of the following areas:</p>
+                        <ul>
+                            <li>Innovation in cybersecurity solutions</li>
+                            <li>Leadership in security awareness</li>
+                            <li>Contributions to the cybersecurity community</li>
+                            <li>Excellence in implementing user-friendly security practices</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="nomination-form-container">
+                    <h3>Submit a Nomination</h3>
+                    
+                    <!-- Custom Nomination Form (HubSpot-ready) -->
+                    <div class="hubspot-form-container">
+                        <form id="nomination-form" class="nomination-form">
+                            <div class="form-group">
+                                <label for="nominator_name">Your Name *</label>
+                                <input type="text" id="nominator_name" name="nominator_name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nominator_email">Your Email *</label>
+                                <input type="email" id="nominator_email" name="nominator_email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nominator_company">Your Company</label>
+                                <input type="text" id="nominator_company" name="nominator_company">
+                            </div>
+                            
+                            <div class="form-divider">
+                                <span>Nominee Information</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nominee_self">Are you nominating yourself?</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="nominee_self" value="yes" id="nominee_self_yes"> Yes
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="nominee_self" value="no" id="nominee_self_no" checked> No
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div id="nominee_fields">
+                                <div class="form-group">
+                                    <label for="nominee_name">Nominee's Name *</label>
+                                    <input type="text" id="nominee_name" name="nominee_name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="nominee_email">Nominee's Email *</label>
+                                    <input type="email" id="nominee_email" name="nominee_email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="nominee_company">Nominee's Company</label>
+                                    <input type="text" id="nominee_company" name="nominee_company">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nominee_category">Category *</label>
+                                <select id="nominee_category" name="nominee_category" required>
+                                    <option value="">Please select</option>
+                                    <option value="innovation">Innovation in Cybersecurity</option>
+                                    <option value="leadership">Leadership in Security Awareness</option>
+                                    <option value="contribution">Contribution to Community</option>
+                                    <option value="ux">User-Friendly Security Practices</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nomination_reason">Why are you nominating this person? *</label>
+                                <textarea id="nomination_reason" name="nomination_reason" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="add_to_crm" id="add_to_crm" checked>
+                                    Add both nominator and nominee to our CRM to receive cybersecurity updates
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="privacy_policy" id="privacy_policy" required>
+                                    I have read and agree to the privacy policy *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-submit">Submit Nomination</button>
+                        </form>
+                        
+                        <!-- Fallback for when JavaScript is disabled -->
+                        <noscript>
+                            <p>Please enable JavaScript to submit the nomination form, or contact us directly at <a href="mailto:nominations@cyberuxcellence.com">nominations@cyberuxcellence.com</a></p>
+                        </noscript>
+                    </div>
+                    
+                    <div class="nomination-success" style="display: none;">
+                        <div class="success-icon">✅</div>
+                        <h3>Nomination Submitted!</h3>
+                        <p>Thank you for your nomination. We'll review it shortly and be in touch with the nominee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-intro">Ready to secure your digital future? Contact us today for a free consultation and discover how we can help strengthen your security posture while enhancing user experience.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>123 Security Lane, Cyberspace</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>info@cyberuxcellence.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">☎️</div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-hours">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9AM - 5PM</p>
+                        <p>Saturday & Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>CyberUXcellence</h3>
+                    <p>Securing your digital future with excellent user experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>info@cyberuxcellence.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>123 Security Lane, Cyberspace</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CyberUXcellence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
