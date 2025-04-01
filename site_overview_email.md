@@ -6,7 +6,7 @@ I'm pleased to share that the Cyber UXcellence Awards website is now available f
 
 ## Demo Site Access
 
-**Live Demo URL:** [https://w4ester.github.io/cyber-uxcellence/](https://w4ester.github.io/cyber-uxcellence/)
+**Live Demo URL:** [https://w4ester.github.io/cyber-uxcellence/](sa/)
 
 The site is fully responsive and can be viewed on any device:
 - Desktop computers
@@ -144,14 +144,11 @@ To fully prepare for launch, we'll need to:
 
 ## Next Steps
 
-1. Please review the demo site at your convenience
+1. Please review the demo site and look forward to connecting today for our virtual meeting.
 2. Note any feedback or changes you'd like to see
-3. Let me know if you'd like to schedule a brief demo walkthrough
-4. Confirm we're on track for our April 4 final review
+3. Confirming we're on track for our April 4 final review
 
-I look forward to your feedback and am available to answer any questions you might have.
-
-Best regards,
+Best,
 
 Will
 
