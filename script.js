@@ -278,30 +278,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Calculate position relative to active card
                 const relativePosition = (index - activeIndex + totalCards) % totalCards;
                 
-                // Create circular effect by reassigning z-index and rotation
-                let zIndex, rotation, opacity, translateZ, scale;
+                // Create circular effect that shows 4 cards at once
+                let zIndex, rotation, opacity, translateZ, scale, translateX;
                 
                 if (relativePosition === 0) {
-                    // Active card (front center)
+                    // First visible card (leftmost position)
                     zIndex = 10;
                     rotation = 0;
                     opacity = 1;
-                    translateZ = 250; // Pushed further forward
-                    scale = 1.05;
-                } else if (relativePosition === 1 || relativePosition === totalCards - 1) {
-                    // First card to right/left
-                    zIndex = 8;
-                    rotation = relativePosition === 1 ? 30 : -30; // More rotation
-                    opacity = 0.85;
-                    translateZ = 50; // Slightly forward
-                    scale = 0.97;
-                } else if (relativePosition === 2 || relativePosition === totalCards - 2) {
-                    // Second card to right/left
-                    zIndex = 6;
-                    rotation = relativePosition === 2 ? 45 : -45; // More rotation
-                    opacity = 0.7;
-                    translateZ = -100;
-                    scale = 0.92;
+                    translateZ = 50;
+                    scale = 1;
+                    translateX = -450; // Position on left
+                } else if (relativePosition === 1) {
+                    // Second visible card (center-left position)
+                    zIndex = 10;
+                    rotation = 0;
+                    opacity = 1;
+                    translateZ = 50;
+                    scale = 1;
+                    translateX = -150; // Position center-left
+                } else if (relativePosition === 2) {
+                    // Third visible card (center-right position)
+                    zIndex = 10;
+                    rotation = 0;
+                    opacity = 1;
+                    translateZ = 50;
+                    scale = 1;
+                    translateX = 150; // Position center-right
+                } else if (relativePosition === 3) {
+                    // Fourth visible card (rightmost position)
+                    zIndex = 10;
+                    rotation = 0;
+                    opacity = 1; 
+                    translateZ = 50;
+                    scale = 1;
+                    translateX = 450; // Position on right
                 } else {
                     // Cards in back
                     zIndex = 4;
@@ -313,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Apply 3D transforms
                 card.style.zIndex = zIndex;
-                card.style.transform = `translate(-50%, -50%) translateZ(${translateZ}px) rotateY(${rotation}deg) scale(${scale})`;
+                card.style.transform = `translate(-50%, -50%) translateX(${translateX || 0}px) translateZ(${translateZ}px) rotateY(${rotation}deg) scale(${scale})`;
                 card.style.opacity = opacity;
             });
             
@@ -458,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Apply styles
             card.style.zIndex = zIndex;
-            card.style.transform = `translate(-50%, -50%) translateZ(${translateZ}px) rotateY(${rotation}deg) scale(${scale})`;
+            card.style.transform = `translate(-50%, -50%) translateX(${translateX || 0}px) translateZ(${translateZ}px) rotateY(${rotation}deg) scale(${scale})`;
             card.style.opacity = opacity;
         });
         

@@ -905,12 +905,12 @@ a:focus {
 /* 3D Carousel Container */
 .categories-scroll-container {
     width: 100%;
-    height: 550px; /* Reduced height for shorter cards */
+    height: 320px; /* Shorter height for smaller cards */
     position: relative;
-    perspective: 2800px; /* Increased perspective for more dramatic effect */
+    perspective: 1000px;
     overflow: hidden;
-    padding: 3rem 0;
-    margin-bottom: 5rem;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
     background: linear-gradient(
         180deg,
         rgba(106, 27, 154, 0.05) 0%,
@@ -1040,19 +1040,19 @@ a:focus {
 /* Standard category cards */
 .category-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 24px;
+    padding: 1.8rem;
+    border-radius: 18px;
     box-shadow: 
-        0 25px 40px rgba(106, 27, 154, 0.1), 
-        0 10px 15px rgba(0, 0, 0, 0.05);
+        0 15px 30px rgba(106, 27, 154, 0.1), 
+        0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease-out;
     border: 1px solid rgba(106, 27, 154, 0.08);
     position: absolute;
     overflow: hidden;
     z-index: 1;
     transform-style: preserve-3d;
-    min-height: 400px;
-    width: 450px;
+    height: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1217,17 +1217,17 @@ a:focus {
 }
 
 .category-title {
-    font-family: 'Playfair Display', 'Montserrat', serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
     color: var(--primary-dark);
     transition: var(--category-transition);
     position: relative;
     display: block;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
+    letter-spacing: 0px;
+    line-height: 1.2;
     font-weight: 700;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     width: 100%;
     max-width: 100%;
     text-align: left;
@@ -1271,17 +1271,20 @@ a:focus {
 
 .category-description {
     color: var(--text-medium);
-    margin-bottom: 2rem;
     transition: var(--category-transition);
     position: relative;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    letter-spacing: 0.2px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    letter-spacing: 0.1px;
     padding: 0;
-    margin: 0 0 2rem 0;
-    max-width: 85%;
+    margin: 0;
+    max-width: 100%;
     font-weight: 400;
-    font-style: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .category-description::before {
