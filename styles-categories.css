@@ -12,6 +12,7 @@
     border-radius: var(--border-radius-lg);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     z-index: 1; /* Ensure proper stacking */
+    min-height: 500px;
 }
 
 /* Background pattern */
@@ -30,40 +31,63 @@
     z-index: 0;
 }
 
-/* Category navigation tabs */
+/* Category navigation tabs - Mindgrub style */
 .categories-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    flex-wrap: nowrap;
+    gap: 0;
+    margin-bottom: 0;
     position: relative;
     z-index: 2;
+    background: rgba(106, 27, 154, 0.4);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.categories-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
 }
 
 .category-nav-item {
     padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius-md);
     cursor: pointer;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
-    background: rgba(106, 27, 154, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    background: transparent;
 }
 
 .category-nav-item:hover {
-    background: rgba(106, 27, 154, 0.2);
     color: white;
 }
 
 .category-nav-item.active {
-    background: white;
-    color: var(--primary-dark);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: 700;
 }
 
-/* Carousel controls */
+.category-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Carousel controls - Mindgrub style */
 .carousel-controls {
     position: absolute;
     top: 50%;
@@ -80,8 +104,8 @@
     background: white;
     border: none;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,10 +119,49 @@
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     transform: scale(1.1);
     opacity: 1;
+}
+
+.prev-btn:active, .next-btn:active {
+    transform: scale(0.95);
+}
+
+/* Add circular indicator to carousel controls */
+.prev-btn::after, .next-btn::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.prev-btn:hover::after, .next-btn:hover::after {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
 /* Carousel container */
@@ -109,144 +172,208 @@
     position: relative;
     overflow: visible; /* Allow cards to be visible properly */
     height: 100%;
+    min-height: 450px;
 }
 
-/* Category card styling */
+/* Category card styling - Mindgrub style */
 .category-card {
-    background: var(--primary-dark);
+    background: transparent;
     padding: 3rem 4rem;
     position: relative;
     flex: 0 0 100%;
     min-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 500px;
-    transition: all 0.3s ease;
-    transform: scale(0.95);
-    opacity: 0.7;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    min-height: 450px;
+    transition: all 0.5s ease;
+    opacity: 0;
     z-index: 0;
 }
 
 .category-card.active {
-    transform: scale(1);
     opacity: 1;
     z-index: 2;
+}
+
+/* White card container - Mindgrub style */
+.card-content {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s ease 0.2s, opacity 0.5s ease 0.2s;
+    min-height: 350px;
+}
+
+.category-card.active .card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Left/right layout for card-content */
+.card-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Category card header */
 .category-header {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
-.category-icon {
-    background: rgba(255, 255, 255, 0.1);
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
+.case-study-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
     color: white;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
 }
 
 .category-title {
-    color: white;
-    font-size: 2.25rem;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1.3;
     position: relative;
 }
 
-/* Award criteria label */
-.award-criteria {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--secondary-color);
-    background: rgba(255, 109, 0, 0.1);
-    padding: 0.3rem 0.6rem;
-    border-radius: var(--border-radius-sm);
+/* Category description */
+.category-description {
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
-/* Category description */
-.category-description {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-/* Stats section */
-.category-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: auto;
-}
-
-.stat-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
+/* Card image */
+.card-image {
     border-radius: var(--border-radius-md);
-    text-align: center;
-    flex: 1;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.stat-value {
-    font-size: 2rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 0.5rem;
+.card-image:hover {
+    transform: scale(1.02);
 }
 
-.stat-label {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
-/* Carousel indicators */
-.carousel-indicators {
+/* Attribution */
+.quote-attribution {
+    margin-top: 1.5rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    margin-top: 2rem;
 }
 
-.carousel-indicator {
-    width: 1rem;
-    height: 1rem;
+.attribution-name {
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.attribution-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Extra arrow in the corner */
+.corner-arrow {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-color);
+    color: white;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    z-index: 3;
+    box-shadow: 0 5px 15px rgba(255, 109, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.carousel-indicator.active {
-    background: white;
-    transform: scale(1.2);
+.corner-arrow:hover {
+    transform: scale(1.1) rotate(45deg);
+}
+
+/* Hide the old carousel navigation that conflicts with Mindgrub style */
+.category-navigation {
+    display: none;
 }
 
 /* Media queries */
-@media (max-width: 768px) {
-    .category-card {
+@media (max-width: 992px) {
+    .card-content {
+        grid-template-columns: 1fr;
         padding: 2rem;
-        min-height: 400px;
+    }
+    
+    .card-right {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+    
+    .category-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-nav {
+        justify-content: flex-start;
+        padding: 0.5rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .case-study-badge {
+        font-size: 0.8rem;
     }
     
     .category-title {
@@ -257,18 +384,17 @@
         font-size: 1rem;
     }
     
-    .category-stats {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .carousel-controls {
-        padding: 0 0.5rem;
-    }
-    
     .prev-btn, .next-btn {
         width: 2.5rem;
         height: 2.5rem;
         font-size: 1rem;
+    }
+    
+    .corner-arrow {
+        top: 1rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
     }
 }
