@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update active class on cards
         categoryCards.forEach((card, index) => {
             card.classList.toggle('active', index === activeIndex);
+            card.setAttribute('aria-hidden', index !== activeIndex);
+        });
+        
+        // Update carousel indicators
+        document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === activeIndex);
         });
     };
     
@@ -55,6 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Category nav item click
     categoryNavItems.forEach((item, index) => {
         item.addEventListener('click', () => {
+            updateCarousel(index);
+        });
+    });
+    
+    // Carousel indicators click
+    document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
             updateCarousel(index);
         });
     });
