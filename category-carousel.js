@@ -11,7 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     
-    if (!categoryCards.length || !carousel) return;
+    console.log('Category carousel initialized');
+    
+    if (!categoryCards.length || !carousel) {
+        console.error('Category cards or carousel container not found');
+        return;
+    }
     
     // Total number of cards and current active index
     const totalCards = categoryCards.length;
@@ -22,8 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure index is within bounds
         activeIndex = (newIndex + totalCards) % totalCards;
         
-        // Update transform to slide horizontally
-        carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
+        console.log(`Updating carousel to index ${activeIndex}`);
+        
+        // Update transform to slide horizontally - with a slight delay to ensure styles apply properly
+        setTimeout(() => {
+            carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
+        }, 10);
         
         // Update active class on navigation items
         categoryNavItems.forEach((item, index) => {
@@ -47,15 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set up navigation functionality
     if (prevBtn && nextBtn) {
+        console.log('Navigation buttons found');
+        
         // Next button click
         nextBtn.addEventListener('click', () => {
+            console.log('Next button clicked');
             updateCarousel(activeIndex + 1);
         });
         
         // Previous button click
         prevBtn.addEventListener('click', () => {
+            console.log('Previous button clicked');
             updateCarousel(activeIndex - 1);
         });
+    } else {
+        console.error('Navigation buttons not found');
     }
     
     // Category nav item click

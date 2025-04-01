@@ -5,12 +5,13 @@
 .categories-scroll-container {
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Critical for carousel to work */
     padding: 0;
     margin: 2rem 0 3rem;
     background: var(--primary-dark);
     border-radius: var(--border-radius-lg);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1; /* Ensure proper stacking */
 }
 
 /* Background pattern */
@@ -71,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
-    z-index: 5;
+    z-index: 10; /* Ensure buttons are above cards */
     pointer-events: none;
 }
 
@@ -87,15 +88,17 @@
     font-size: 1.25rem;
     color: var(--primary-dark);
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     pointer-events: auto;
+    opacity: 0.9;
 }
 
 .prev-btn:hover, .next-btn:hover {
     background: var(--primary-color);
     color: white;
     transform: scale(1.1);
+    opacity: 1;
 }
 
 /* Carousel container */
@@ -104,6 +107,8 @@
     width: 100%;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
+    overflow: visible; /* Allow cards to be visible properly */
+    height: 100%;
 }
 
 /* Category card styling */
@@ -118,15 +123,18 @@
     justify-content: space-between;
     min-height: 500px;
     transition: all 0.3s ease;
-    transform: scale(0.98);
+    transform: scale(0.95);
     opacity: 0.7;
     border-radius: var(--border-radius-md);
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 0;
 }
 
 .category-card.active {
     transform: scale(1);
     opacity: 1;
+    z-index: 2;
 }
 
 /* Category card header */
