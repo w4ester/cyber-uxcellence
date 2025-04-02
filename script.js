@@ -354,7 +354,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize animation observers or fallbacks
     const initAnimationsFallback = () => {
-        if (typeof AOS !== 'undefined' && AOS.isInitialized()) return; // Don't run if AOS is working
+        // Check if AOS is defined. If so, assume initAOS handled it or will handle it.
+        // This fallback only runs if AOS is completely undefined.
+        if (typeof AOS !== 'undefined') return;
 
         if ('IntersectionObserver' in window) {
              const fadeElements = document.querySelectorAll('[data-aos]');
