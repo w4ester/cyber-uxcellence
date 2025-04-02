@@ -66,6 +66,11 @@ coverage/
 .vercel
 .netlify
 
+# Project specific files
+.roo
+.clinerules
+.clinerules-architect
+
 # Backup files
 *.bak
 *.backup
